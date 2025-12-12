@@ -1,12 +1,16 @@
-Get-ChildItem -Path "C:\Windows" -Directory | 
-    Where-Object { $_.Name -match '[st]$' } |
-    Sort-Object Name |
-    Format-Table Name, LastWriteTime
-
-Get-ChildItem -Path "C:\Windows" -Directory | 
-    Where-Object { $_.Name -match '[st]$' } |
-    Sort-Object Name |
-    Select-Object Name, FullName, LastWriteTime |
-    Out-File -FilePath "D:\осст3лаб\1.txt"
-
-Write-Host "done"
+#!/bin/bash
+echo "Vvedite chislo ot kotorogo poshitat` factorial"
+read counter
+factorial=1
+if [ $counter -lt 0 ]       
+then
+    echo "Vvedite polojitel`noe chislo ili nol`"
+else
+    while [ $counter -gt 0 ] # 
+    do
+        factorial=$(($factorial*$counter))
+        counter=$(($counter - 1))
+    done
+    echo $factorial
+fi
+exit 0
